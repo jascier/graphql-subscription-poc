@@ -1,0 +1,37 @@
+query Reviews {
+  reviews {
+    id
+    body
+    author {
+      username
+      id
+    }
+  }
+}
+
+query Users {
+  users {
+    id
+    username
+  }
+}
+
+mutation createUserM($input: CreateUserInput!) {
+  createUser(input: $input) {
+    username
+  }
+}
+
+subscription UserCreated {
+  userCreated {
+    id
+    username
+  }
+}
+
+// input
+{
+  "input": {
+    "username": "Newly Created User 11"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "graphql-subscription-poc",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "start:users": "node ./dist/subgraphs/users/index.js",
+    "start:reviews": "node ./dist/subgraphs/reviews/index.js",
+    "start:all-subgraphs": "yarn build && (yarn start:users & yarn start:reviews)",
+    "start:gateway": "yarn build && node ./dist/gateway/index.js"
+  },
+  "dependencies": {
+    "@apollo/gateway": "^2.4.2",
+    "@apollo/server": "^4.7.0",
+    "@apollo/subgraph": "^2.4.2",
+    "graphql": "^16.6.0",
+    "graphql-redis-subscriptions": "^2.6.0",
+    "graphql-subscriptions": "^2.0.0",
+    "graphql-tag": "^2.12.6",
+    "graphql-ws": "^5.12.1",
+    "ioredis": "^5.3.2",
+    "ws": "^8.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.3",
+    "nodemon": "^2.0.22",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  }
+}
